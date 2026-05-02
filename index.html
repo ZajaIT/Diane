@@ -617,6 +617,23 @@ footer{
   cursor:pointer;
 }
 
+  .hamburger{
+  display:none;
+  flex-direction:column;
+  gap:5px;
+  cursor:pointer;
+  margin-left:auto;
+  z-index:1100;
+}
+
+.hamburger span{
+  width:25px;
+  height:3px;
+  background:#38332E;
+  border-radius:2px;
+  transition:0.3s;
+}
+
 @media(max-width:768px){
   .onas-images{
     position:relative;
@@ -637,6 +654,50 @@ footer{
   .map{
     min-height:250px;
   }
+
+  nav{
+    padding:20px;
+  }
+
+  nav ul{
+    position:fixed;
+    top:0;
+    right:-100%;
+    width:70%;
+    height:100vh;
+    background:#F8F6F2;
+    flex-direction:column;
+    align-items:flex-start;
+    padding:100px 30px;
+    gap:20px;
+    transition:0.4s ease;
+    box-shadow:-10px 0 30px rgba(0,0,0,0.1);
+  }
+
+  nav ul.active{
+    right:0;
+  }
+
+  .hamburger{
+    display:flex;
+  }
+
+  .nav-contact,
+  nav .btn{
+    display:none;
+  }
+
+  .hamburger.active span:nth-child(1){
+    transform:rotate(45deg) translate(5px,5px);
+  }
+
+  .hamburger.active span:nth-child(2){
+    opacity:0;
+  }
+
+  .hamburger.active span:nth-child(3){
+    transform:rotate(-45deg) translate(6px,-6px);
+  }
 }
 
 </style>
@@ -655,6 +716,12 @@ footer{
   <li><a href="#cenik">Ceník</a></li>
   <li><a href="#kontakt">Kontakt</a></li>
 </ul>
+
+  <div class="hamburger" id="hamburger">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
 
 <a href="tel:+420775351999" class="nav-contact">
   <i class="fa-solid fa-phone"></i>
@@ -1166,6 +1233,43 @@ tabs.forEach(btn => {
     target.classList.add("active");
 
   });
+});
+
+  const hamburger = document.getElementById("hamburger");
+const navMenu = document.querySelector("nav ul");
+
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+  navMenu.classList.toggle("active");
+
+  document.body.style.overflow = navMenu.classList.contains("active") ? "hidden" : "";
+});
+
+/* zavření po kliknutí na link */
+document.querySelectorAll("nav ul a").forEach(link => {
+  link.addEventListener("click", () => {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+    document.body.style.overflow = "";
+  });
+});
+
+/* zavření klikem mimo */
+document.addEventListener("click", (e) => {
+  if(!navMenu.contains(e.target) && !hamburger.contains(e.target)){
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+    document.body.style.overflow = "";
+  }
+});
+
+/* zavření ESC */
+document.addEventListener("keydown", (e) => {
+  if(e.key === "Escape"){
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+    document.body.style.overflow = "";
+  }
 });
 </script>
 
