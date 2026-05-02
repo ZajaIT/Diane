@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Kadeřnictví Praha 7 | Diane</title>
+
+<!-- FONTS -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root{
+  --bg:#F8F6F2;
+  --green:#6A833F;
+  --text:#2b2b2b;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'DM Sans',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+}
+
+html, body{
+  width:100%;
+  overflow-x:hidden;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+/* NAV */
+nav{
+  position:fixed;
+  width:100%;
+  top:0;
+  display:flex;
+  justify-content:flex-start;
+  gap:30px;
+  align-items:center;
+  padding:20px 80px;
+  background:transparent; 
+  backdrop-filter:none;  
+  z-index:1000;
+  transition:0.3s ease;  
+  border-bottom:1px solid transparent;
+}
+
+nav.scrolled{
+  background:rgba(248,246,242,0.95);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(56,51,46,0.08); 
+  box-shadow:0 4px 20px rgba(0,0,0,0.05); 
+}
+
+nav .logo{
+  display:flex;
+  align-items:center;
+}
+
+nav .logo img{
+  height:32px;
+  width:auto;
+  display:block;
+  transform: scale(2.9); 
+  transform-origin: left center; 
+}
+
+nav ul{
+  display:flex;
+  gap:30px;
+  list-style:none;
+  margin-left:auto;
+}
+
+nav a{
+  text-decoration:none;
+  color:#38332E;
+  font-weight:700;
+  font-size:18px;
+  transition:0.3s ease;
+}
+
+nav a:hover{
+  color:var(--green);
+}
+
+.nav-contact{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-right:10px;
+  color:#38332E;
+  font-size:16px;
+  transition:0.3s ease;
+  text-decoration:none;
+}
+
+.nav-contact:hover{
+  color:var(--green);
+}
+
+.phone-number{
+  font-size:16px;
+  color:inherit;
+  font-weight:700;
+}
+
+.btn{
+  background:var(--green);
+  color:#F8F6F1;
+  padding:12px 24px;
+  border-radius:10px;
+  font-size:16px;
+  font-weight:700;
+  text-decoration:none;
+  transition:0.3s ease;
+  display:inline-block;
+  cursor:pointer;
+  box-shadow:0 4px 12px rgba(0,0,0,0.08);
+}
+
+.btn:hover{
+  background:#7f9b4d; 
+  color:#F8F6F1; 
+}
+
+/* HERO */
+.hero{
+  height:90vh;
+  display:flex;
+  align-items:flex-end;
+  padding:0 20px 80px 80px;
+  background:url('interier-kadernictvi-diane.jpg') 30% 70% / cover no-repeat;
+  position:relative;
+  filter: brightness(0.95) contrast(1.05) saturate(1.1);
+}
+
+.hero::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    to right,
+    rgba(0,0,0,0.55) 0%,   
+    rgba(0,0,0,0.35) 15%,
+    rgba(0,0,0,0.15) 30%,
+    rgba(0,0,0,0.0) 45%   
+  );
+}
+
+.hero-content{
+  position:relative;
+  max-width:600px;
+  color:white;
+  z-index:2;
+}
+
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:60px;
+  line-height:1.1;
+  color:white;
+}
+
+.hero h1 span{
+  color:white;
+}
+
+.hero p{
+  margin-top:20px;
+  font-size:20px; 
+  color:white;
+}
+
+.hero-buttons{
+  margin-top:30px;
+  display:flex;
+  gap:15px;
+}
+
+.btn-outline{
+  border:1px solid white;
+  color:white;
+  padding:12px 24px;
+  border-radius:10px;
+  font-weight:700;         
+  text-decoration:none;     
+  display:inline-flex;     
+  align-items:center;
+  gap:8px; 
+  transition:0.3s ease;                 
+}
+
+.btn-outline:hover{
+  background:white;
+  color:var(--green);
+}
+
+/* SECTIONS */
+section{
+  padding:80px 20px 0;
+  width:100%;
+  scroll-margin-top:60px;
+}
+
+h2{
+  font-family:'Playfair Display',serif;
+  font-size:42px;
+  text-align:center;
+  margin-bottom:25px;
+}
+
+#onas{
+  padding:80px 20px 80px 80px;
+}
+
+#onas h2,
+#onas h3,
+#onas .section-sub{
+  text-align:left;
+}
+
+#onas h3{
+  text-transform: uppercase;
+  letter-spacing:1px;
+  margin-top:40px;
+  margin-bottom:15px;
+  font-weight:600;
+  color:#38332E;
+}
+
+#kontakt h2{
+  margin-bottom:80px;
+}
+
+.onas-wrapper{
+  display:grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap:40px;
+  align-items:start;
+  position:relative;
+}
+
+.onas-text{
+  max-width:700px;
+  position:relative;
+  z-index:2;
+}
+
+#onas p{
+  line-height:1.4;
+}
+
+.onas-images{
+  display:flex;
+  flex-direction:column;
+  gap:40px;
+  align-items:flex-start; 
+}
+
+.onas-images img{
+  width:100%;
+  max-width:380px; 
+  height:auto;
+  border-radius:50%;
+  object-fit:cover;
+  opacity:0.35;
+  filter:grayscale(20%) contrast(0.9);
+  transform:translateX(-20px); 
+}
+
+.section-sub{
+  text-align:center;
+  margin-bottom:80px;
+  color:#666;
+}
+
+/* CARDS */
+.grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:25px;
+}
+
+.card{
+  background:#F1EEE8;
+  padding:40px;
+  border-radius:20px;
+  box-shadow:0 2px 8px rgba(0,0,0,0.04);
+  border:1px solid rgba(0,0,0,0.04);
+
+  display:flex;
+  flex-direction:column;
+  height:100%;
+}
+
+.card h3{
+  font-family:'Playfair Display',serif;
+  margin-top:0;
+  margin-bottom:20px;
+}
+
+.card p{
+  line-height:1.4;
+  flex-grow:1;
+  margin-bottom:20px;
+}
+
+#sluzby{
+  margin-top:-100px;
+  max-width:1100px;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.service-icon{
+  font-size:28px;
+  color:var(--green);
+  margin-bottom:0;
+  display:inline-block;
+  position:relative;
+  top:-8px;
+}
+
+.service-icon-img{
+  width:30px;
+  height:30px;
+  object-fit:contain;
+  margin-bottom:0;
+  display:inline-block;
+  position:relative;
+  top:-8px;
+  filter: brightness(0) saturate(100%) invert(43%) sepia(28%) saturate(466%) hue-rotate(46deg) brightness(95%) contrast(88%);
+}
+
+.card-header{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.more-link{
+  display:inline-block;
+  margin-top:auto;
+  font-weight:600;
+  color:var(--green);
+  cursor:pointer;
+  transition:0.3s ease;
+}
+
+.more-link:hover{
+  opacity:0.7;
+}
+
+/* CENIK */
+.pricing-tabs{
+  display:flex;
+  gap:10px;
+  justify-content:center;
+  margin-bottom:30px;
+  flex-wrap:wrap;
+}
+
+.tab-btn{
+  padding:10px 18px;
+  border-radius:10px;
+  border:1px solid rgba(0,0,0,0.1);
+  background:transparent;
+  cursor:pointer;
+  font-weight:400;
+  display:flex;
+  align-items:center;
+  gap:8px;
+}
+
+.tab-btn.active{
+  background:var(--green);
+  color:white;
+  border-color:var(--green);
+}
+
+.pricing{
+  background:white;
+  border-radius:20px;
+  padding:30px;
+  max-width:900px;
+  margin:0 auto;
+}
+
+.pricing-content{
+  display:none;
+}
+
+.pricing-content.active{
+  display:block;
+}
+
+.price-row{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  padding:16px 0;
+  border-bottom:1px solid #eee;
+}
+
+.price-row div{
+  max-width:70%;
+  font-size:15px;
+}
+
+.price-row div strong{
+  display:block;
+  font-size:16px;
+  color:#2b2b2b;
+  font-weight:500;
+  margin-bottom:2px;
+}
+
+.price-row div span{
+  display:block;
+  font-size:14px;
+  color:#888;
+  font-weight:400;
+}
+
+.price-row > span{
+  font-weight:500;
+  white-space:nowrap;
+}
+
+.price-row:last-child{
+  border-bottom:none;
+}
+
+.pricing-note{
+  text-align:center;
+  margin-top:20px;
+  color:#666;
+  font-size:14px;
+}
+
+/* CONTACT */
+
+.contact{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap:30px;
+  align-items:start;
+  max-width:1100px;
+  margin:0 auto;
+}
+
+.contact-info{
+  display:flex;
+  flex-direction:column;
+  gap:25px;
+  padding-left:60px;
+}
+
+.contact-block h3{
+  font-family:'Playfair Display',serif;
+  font-size:16px;
+  margin-bottom:10px;
+
+  display:flex;
+  align-items:center;
+  gap:10px;
+
+  color:#2b2b2b;
+}
+
+.contact-block i{
+  color:var(--green);
+}
+
+.contact-block p{
+  font-size:16px;
+  line-height:1.5;
+}
+
+.contact-block a{
+  color:var(--green);
+  text-decoration:none;
+  transition:0.2s;
+  font-size:16px;
+}
+
+.contact-block a:hover{
+  opacity:0.7;
+}
+
+.map-link{
+  text-decoration:none;
+  display:block;
+  height:100%;
+  cursor:pointer;
+  padding-right:60px;
+}
+
+.map{
+  width:100%;
+  height:100%;
+  min-height:320px;
+  background:#eae7e1;
+  border-radius:20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#666;
+  font-weight:500;
+  transition:0.3s;
+  overflow:hidden;
+}
+
+.map:hover{
+  background:#ddd8cf;
+}
+
+.map iframe{
+  border:0;
+  pointer-events:none; 
+}
+
+/* FOOTER */
+footer{
+  text-align:center;
+  padding:40px;
+  font-size:14px;
+  border-top:1px solid rgba(0,0,0,0.08);
+  margin-top:60px;
+}
+
+/* OVERLAY */
+.overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.4);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  opacity:0;
+  pointer-events:none;
+
+  transition:0.3s ease;
+  z-index:2000;
+}
+
+.overlay.active{
+  opacity:1;
+  pointer-events:auto;
+}
+
+/* BOX */
+.overlay-content{
+  background:white;
+  padding:40px;
+  border-radius:20px;
+  max-width:700px;
+  width:90%;
+  max-height:80vh;
+  overflow-y:auto;
+  position:relative;
+}
+
+.overlay-content p{
+  line-height:1.5;
+  font-size:15px;
+}
+
+.overlay-content strong{
+  display:block;
+  margin-top:10px;
+  margin-bottom:0;
+  color:var(--green);
+  font-weight:700;
+}
+
+.overlay-content .bullet{
+  display:block;
+  position:relative;
+  padding-left:18px;
+  margin-bottom:6px;
+  font-size:15px;
+}
+
+.overlay-content .bullet::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:7px;
+
+  width:6px;
+  height:6px;
+  border-radius:2px;
+
+  background:#F28C82; 
+}
+
+/* CLOSE */
+.close{
+  position:absolute;
+  top:15px;
+  right:20px;
+  font-size:28px;
+  cursor:pointer;
+}
+
+@media(max-width:768px){
+  .onas-images{
+    position:relative;
+    top:0;
+    align-items:center;
+  }
+
+  .onas-images img{
+    opacity:1;
+    filter:none;
+  }
+
+.contact{
+    grid-template-columns:1fr;
+    gap:30px;
+  }
+
+  .map{
+    min-height:250px;
+  }
+}
+
+</style>
+</head>
+
+<body id="top">
+
+<nav>
+  <a href="#top" class="logo">
+  <img src="logo.png" alt="Kadeřnictví Diane">
+</a>
+  <ul>
+  <li><a href="#top">Domů</a></li>
+  <li><a href="#onas">O nás</a></li>
+  <li><a href="#sluzby">Služby</a></li>
+  <li><a href="#cenik">Ceník</a></li>
+  <li><a href="#kontakt">Kontakt</a></li>
+</ul>
+
+<a href="tel:+420775351999" class="nav-contact">
+  <i class="fa-solid fa-phone"></i>
+  <span class="phone-number">775 351 999</span>
+</a>
+
+  <a href="#kontakt" class="btn">Objednat se</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <h1>Kadeřnictví Praha 7 střih, barvení i péče o&nbsp;vlasy</h1>
+    <p>Objednejte se online nebo zavolejte – jsme tu pro vás každý den.</p>
+
+    <div class="hero-buttons">
+      <a href="#kontakt" class="btn">Objednat se online</a>
+      <a href="tel:+420775351999" class="btn-outline">
+  <i class="fa-solid fa-phone"></i> Zavolat
+</a>
+    </div>
+  </div>
+</section>
+
+<section id="onas">
+  <div class="onas-wrapper">
+
+    <div class="onas-text">
+      <h2>Vítejte v Diane kadeřnictví</h2>
+
+      <p class="section-sub">
+        Naším cílem je tvorba účesu v souladu s Vaší osobností a stylem. Respektujeme Vaše přání, proto je naším sloganem "Jednoduše Vy". Nabízíme klasické i nejnovější střihy pro dámy, pány i Vaše dítka. Je možné přijít i bez objednání. Naše otevírací doba je pondělí až pátek 10,00-19,00. Je možné si domluvit termín mimo otevírací dobu, či o víkendu, budeli to v našich časových možnostech, rády vyhovíme.
+      </p>
+
+      <h3>Poradíme Vám s následnou péčí o vlasy</h3>
+
+      <p class="section-sub">
+        V kadeřnictví je možné zakoupit profesionální vlasové přípravky, se kterými pracujeme. Preferujeme kvalitní přírodní a zároveň účinnou profesionální vlasovou kosmetiku.
+        <br><br>
+        Od firmy KAARAL, doporučujeme řadu MARAES, tato kosmetika má certifikát ECOCERT, což je BIO pro EU. Neobsahuje sulfáty, parabeny, lepek, soli, DEA a další běžně používané chemické složky. Je vhodná také pro alergiky.
+        <br><br>
+        Novinkou je u nás luxusní kosmetika PAUL MITCHELL, řada AWPUHI WILD GINGER - unikátní pro rekonstrukci vlasů. Také wellness řada s levandulí pro hydrataci, nebo s citronovou šalvějí pro objem je skvělá!
+      </p>
+
+      <h3>Bylinné masáže pro zdraví Vašich vlasů i vlasové pokožky</h3>
+
+      <p class="section-sub">
+        pracujeme s čistými bylinnými esencemi od firmy Young living, vhodné například na problémy s vlasovou pokožkou, proti padání vlasů, stresu..zkrátka bylinky dostanete na "míru". Přijďte vyzkoušet wellness masáž vlasové pokožky, to musíte zažít!
+      </p>
+
+    </div>
+
+    <div class="onas-images">
+      <img src="sluzby-kadernictvi.png" alt="Kadeřnické služby">
+      <img src="manikura-pedikura.png" alt="Manikúra a pedikúra">
+    </div>
+
+  </div>
+</section>
+
+
+<!-- SLUŽBY -->
+<section id="sluzby">
+  <h2>Služby</h2>
+  <p class="section-sub">Kompletní péče o vaše vlasy, ruce i nohy na jednom místě.</p>
+
+  <div class="grid">
+    <div class="card">
+  <div class="card-header">
+    <i class="fa-solid fa-scissors service-icon"></i>
+    <h3>Barvení a melírování vlasů</h3>
+  </div>
+  <p>Nabízíme nejnovější melírovací a barvící techniky. Používáme kvalitní a zárověň šetrné profesionální barvy i jiné vlasové kosmetiky.</p>
+<span class="more-link" data-service="barveni">Zjistit více</span>
+</div>
+    <div class="card">
+  <div class="card-header">
+    <i class="fa-solid fa-leaf service-icon"></i>
+    <h3>Regenerace a péče o zdraví vlasů</h3>
+  </div>
+  <p>Po posouzení kvality vlasů doporučujeme vhodnou formu regenerace a následné péče.</p>
+<span class="more-link" data-service="regenerace">Zjistit více</span>
+</div>
+    <div class="card">
+  <div class="card-header">
+    <img src="hairbrush.png" class="service-icon-img" alt="Prodlužování vlasů">
+    <h3>Prodlužování vlasů</h3>
+  </div>
+  <p>Provádíme prodlužování a zhušťování vlasů metodou s keratinem. Tato metoda je šetrná ke struktuře Vašich vlasů.</p>
+<span class="more-link" data-service="prodluzovani">Zjistit více</span>
+</div>
+    <div class="card">
+  <div class="card-header">
+    <i class="fa-solid fa-hand-sparkles service-icon"></i>
+    <h3>Manikúra / Pedikúra</h3>
+  </div>
+  <p>Dopřejte si u nás kvalitní péči o své ruce i nohy.</p>
+<span class="more-link" data-service="manikura">Zjistit více</span>
+</div>
+  </div>
+</section>
+
+<!-- CENÍK -->
+<section id="cenik">
+  <h2>Ceník</h2>
+
+  <div class="pricing-tabs">
+
+    <button class="tab-btn active" data-tab="damske">
+      <i class="fa-solid fa-scissors"></i> Dámské
+    </button>
+
+    <button class="tab-btn" data-tab="panske">
+      <i class="fa-solid fa-scissors"></i> Pánské
+    </button>
+
+    <button class="tab-btn" data-tab="mani">
+      <i class="fa-solid fa-hand-sparkles"></i> Manikúra / Pedikúra
+    </button>
+
+  </div>
+
+  <div class="pricing">
+
+  <!-- DÁMSKÉ -->
+  <div class="pricing-content active" id="damske">
+
+    <div class="price-row">
+      <div>
+        <strong>Wellness střih</strong>
+        <span>Mytí, regenerace, bylinková masáž, střih, foukaná</span>
+      </div>
+      <span>590 Kč – 950 Kč</span>
+    </div>
+
+    <div class="price-row">
+      <div>
+        <strong>Barva Baco</strong>
+        <span>Mytí, regenerace, střih, foukaná</span>
+      </div>
+      <span>1 250 Kč – 1 850 Kč</span>
+    </div>
+
+    <div class="price-row">
+      <div>
+        <strong>Barva Soft / bez amoniaku</strong>
+        <span>Mytí, regenerace, střih, foukaná</span>
+      </div>
+      <span>1 250 Kč – 2 000 Kč</span>
+    </div>
+
+    <div class="price-row">
+      <div>
+        <strong>Barva Maraes 95% přírodní</strong>
+        <span>Mytí, bylinková masáž, regenerace, střih, foukaná</span>
+      </div>
+      <span>1 450 Kč – 2 200 Kč</span>
+    </div>
+
+    <div class="price-row">
+      <div>
+        <strong>Melír</strong>
+        <span>Mytí, bylinková masáž, regenerace, střih, foukaná</span>
+      </div>
+      <span>1 450 Kč – 2 100 Kč</span>
+    </div>
+
+    <div class="price-row">
+      <div>
+        <strong>Melír šetrný – bez amoniaku</strong>
+        <span>Mytí, bylinková masáž, regenerace, střih, foukaná</span>
+      </div>
+      <span>1 550 Kč – 2 200 Kč</span>
+    </div>
+
+    <div class="price-row">
+      <div>
+        <strong>Tónování po melíru / barva k melíru</strong>
+      </div>
+      <span>400 Kč – 600 Kč</span>
+    </div>
+
+  </div>
+
+  <!-- PÁNSKÉ -->
+  <div class="pricing-content" id="panske">
+
+    <div class="price-row">
+      <div><strong>Klasický pánský střih</strong></div>
+      <span>330 Kč</span>
+    </div>
+
+    <div class="price-row">
+      <div><strong>Klasický pánský střih – delší vlasy</strong></div>
+      <span>380 Kč</span>
+    </div>
+
+    <div class="price-row">
+      <div><strong>Mytí, střih, sušení</strong></div>
+      <span>440 Kč</span>
+    </div>
+
+    <div class="price-row">
+      <div><strong>Mytí, střih, sušení – po ramena</strong></div>
+      <span>480 Kč</span>
+    </div>
+
+    <div class="price-row">
+      <div><strong>Pánský wellness střih – bylinková masáž</strong></div>
+      <span>480 Kč</span>
+    </div>
+
+    <div class="price-row">
+      <div><strong>Pánský wellness střih – bylinková masáž, po ramena</strong></div>
+      <span>530 Kč</span>
+    </div>
+
+    <div class="price-row">
+      <div><strong>Pánské barvení gelovou barvou</strong></div>
+      <span>980 Kč</span>
+    </div>
+
+    <div class="price-row">
+      <div><strong>Dětský střih do 10 let</strong></div>
+      <span>290 Kč</span>
+    </div>
+
+  </div>
+
+  <!-- MANIKÚRA / PEDIKÚRA -->
+  <div class="pricing-content" id="mani">
+
+    <div class="price-row">
+      <div><strong>Pedikúra kombinovaná</strong></div>
+      <span>690 Kč</span>
+    </div>
+
+    <div class="price-row">
+      <div><strong>Zdravotní pedikúra</strong></div>
+      <span>850 Kč</span>
+    </div>
+
+    <div class="price-row">
+      <div>
+        <strong>SPA pedikúra</strong>
+        <span>Peeling, zábal, koupel s esenciál. oleji, masáž</span>
+      </div>
+      <span>950 Kč</span>
+    </div>
+
+    <div class="price-row">
+      <div><strong>Manikúra</strong></div>
+      <span>450 Kč</span>
+    </div>
+
+    <div class="price-row">
+      <div><strong>Lakování / Lakování gel nohy/ruce</strong></div>
+      <span>200 Kč</span>
+    </div>
+
+  </div>
+
+</div>
+
+  <p class="pricing-note">
+    Kompletní ceník Vám rádi představíme přímo u nás v kadeřnictví. Cena u chemických úkonů se může lišit v návaznosti na skutečnou spotřebu materiálu.
+  </p>
+
+</section>
+
+<!-- KONTAKT -->
+<section id="kontakt">
+  <h2>Kontaktujte nás</h2>
+
+  <div class="contact">
+
+    <div class="contact-info">
+
+      <div class="contact-block">
+        <h3><i class="fa-solid fa-location-dot"></i> Adresa</h3>
+        <p>
+          Diane kadeřnictví<br>
+          <a href="https://maps.app.goo.gl/fwkDfXzRt64wTSiN8" target="_blank">
+  Veletržní 14<br>
+  170 00 Praha 7
+</a>
+        </p>
+      </div>
+
+      <div class="contact-block">
+        <h3><i class="fa-solid fa-clock"></i> Otevírací doba</h3>
+        <p>
+          Po, St, Pá: 10:00 – 19:00<br>
+          Út, Čt: 9:00 – 19:00
+        </p>
+      </div>
+
+      <div class="contact-block">
+        <h3><i class="fa-solid fa-phone"></i> Telefon</h3>
+        <p>
+          Jana Tomášková: <a href="tel:+420775351999">775 351 999</a><br>
+          Dana Hůlková: <a href="tel:+420774182399">774 182 399</a>
+        </p>
+      </div>
+
+      <div class="contact-block">
+        <h3><i class="fa-solid fa-envelope"></i> Email</h3>
+        <p>
+          <a href="mailto:janatoma@icloud.com">janatoma@icloud.com</a>
+        </p>
+      </div>
+
+      <div class="contact-block">
+  <h3>
+    <a href="https://www.facebook.com/profile.php?id=100063791433227&ref=embed_page#" target="_blank">
+      <i class="fa-brands fa-facebook"></i> Najdete nás na Facebooku
+    </a>
+  </h3>
+</div>
+
+    </div>
+
+    <a href="https://maps.app.goo.gl/fwkDfXzRt64wTSiN8" target="_blank" class="map-link">
+  <div class="map">
+    <iframe
+      src="https://www.google.com/maps?q=Veletržní+14,+Praha+7&output=embed"
+      width="100%"
+      height="100%"
+      style="border:0;"
+      loading="lazy">
+    </iframe>
+  </div>
+</a>
+
+  </div>
+</section>
+
+<footer>
+  © Diane kadeřnictví
+</footer>
+
+<div class="overlay" id="overlay">
+  <div class="overlay-content">
+
+    <span class="close">&times;</span>
+
+    <h2>Barvení a melírování vlasů</h2>
+
+    <p>
+      Tady bude dlouhý text o službě. Klidně několik odstavců, SEO text atd.
+      Tento obsah později napojíme dynamicky podle kliknuté karty.
+    </p>
+
+  </div>
+</div>
+
+<script>
+window.addEventListener("scroll", function(){
+  const nav = document.querySelector("nav");
+
+  if(window.scrollY > 50){
+    nav.classList.add("scrolled");
+  } else {
+    nav.classList.remove("scrolled");
+  }
+});
+
+const overlay = document.getElementById("overlay");
+const moreLinks = document.querySelectorAll(".more-link");
+
+const overlayContent = document.querySelector(".overlay-content");
+
+moreLinks.forEach(link => {
+  link.addEventListener("click", () => {
+
+    const service = link.getAttribute("data-service");
+
+    overlayContent.innerHTML = `
+      <span class="close">&times;</span>
+      <h2>${link.parentElement.querySelector("h3").innerText}</h2>
+      <p>${serviceTexts[service]}</p>
+    `;
+
+    overlay.classList.add("active");
+    document.body.style.overflow = "hidden";
+    document.documentElement.style.overflow = "hidden";
+
+    
+    document.querySelector(".close").addEventListener("click", () => {
+  overlay.classList.remove("active");
+  document.body.style.overflow = "";
+  document.documentElement.style.overflow = "";
+});
+
+  });
+});
+
+const closeBtn = document.querySelector(".close");
+
+/* zavření křížkem */
+closeBtn.addEventListener("click", () => {
+  overlay.classList.remove("active");
+  document.body.style.overflow = "";
+  document.documentElement.style.overflow = "";
+});
+
+/* zavření klikem mimo */
+overlay.addEventListener("click", (e) => {
+  if(e.target === overlay){
+    overlay.classList.remove("active");
+    document.body.style.overflow = "";
+    document.documentElement.style.overflow = "";
+  }
+});
+
+/* zavření ESC */
+document.addEventListener("keydown", (e) => {
+  if(e.key === "Escape"){
+    overlay.classList.remove("active");
+    document.body.style.overflow = "";
+    document.documentElement.style.overflow = "";
+  }
+});
+
+const serviceTexts = {
+
+barveni: `
+NABÍZÍME NEJNOVĚJŠÍ MELÍROVACÍ A BARVÍCÍ TECHNIKY. BARVÍME DO ÚČESU.<br><br>
+
+<strong>PRACUJEME S PROFESIONÁLNÍ VLASOVOU KOSMETIKOU ITALSKÉ FIRMY KAARAL</strong><br>
+
+<strong>KAARAL ŘADA BACO - OBSAHUJE HEDVÁBNÉ A RÝŽOVÉ PROTEINY ZAJIŠŤUJÍCÍ VYSOKOU VYŽIVOVACÍ SCHOPNOST, DODÁVÁ VLASŮM ZDRAVÝ VZHLED A DLOUHODOBÝ LESK</strong><br>
+<span class="bullet">viditelné zlepšování kvality vlasů při pravidelném barvení</span>
+<span class="bullet">barvy neobsahují chemické konzervanty a parabeny, minimální množství amoniaku</span>
+<span class="bullet">specielní mikropigmenty nové generace</span><br>
+
+<strong>KAARAL BACO SOFT - OBSAHUJE VYSOKÉ PROCENTO VÝŽIVOVÝCH SLOŽEK - KOKOSOVÝ OLEJ, ALOE VERA, PROVITAMÍN B5, ZAJIŠŤUJÍCÍ ZDRAVÝ VZHLED VLASŮ, DLOUHODOBÝ BRILATNÍ LESK A MĚKKOST</strong><br>
+<span class="bullet">viditelné zlepšování kvality vlasu při pravidelném barvení</span>
+<span class="bullet">BEZ amoniaku, chemických konzervantů, parabenů</span>
+<span class="bullet">obsahují kokosový olej, aloe vera, provitamín B, hedvábné rýžové proteiny</span>
+<span class="bullet">obsahují specielní mikropigmenty nové generace</span><br>
+
+<strong>KAARAL MARAES - LUXUSNÍ ŘADA BAREV OBSAHUJÍCÍ 80% VYŽIVUJÍCÍCH SLOŽEK</strong><br>
+<span class="bullet">Monoi de Tahity, kokosový olej, filtry UVA/UVB</span>
+<span class="bullet">specielní mikropigmenty nové generace</span>
+<span class="bullet">obzvlšť vhodná pro jemné a citlivé vlasy</span>
+<span class="bullet">řada Maraes je vhodná pro alergiky, certifikace ECO cert</span>
+<span class="bullet">neobsahuje: PPD (parafenyldiamin), amoniak, parabeny, sulfáty, lepek, přídavné soli</span><br>
+`,
+
+regenerace: `
+Po posouzení kvality Vašich vlasů použijeme odpovídající šampon a regeneraci, případně nabídneme aplikaci vlasové masky. Oblíbeným produktem našich zákaznic je mineralizační kůra pro hloubkovou regeneraci.<br><br>
+
+<strong>MARAE​S ELIXÍR KERATIN + MONOI DE TAHITI</strong><br>
+<span class="bullet">péče pro dodání intenzivní výživy, výjimečné měkkosti a nové síly vlasům</span>
+<span class="bullet">doppio elixir je ideální pro vlasy dehydrované, barvené, poškozené a tenké</span>
+<span class="bullet">vlasy jsou viditelně zářivější, silnější, zdravé a vyživené po 5–10 minutách aplikace</span>
+<span class="bullet">Monoi de tahiti je certifikován organic ecocert®</span><br>
+
+<strong>PAUL MITCHELL AWAPUHI WILD GINGER KERATRIPLEX® TREATMENT</strong><br>
+Keratriplex® treatment transformuje slabé, polámané a křehké prameny, dodává jim sílu a chrání je před dalším poškozením.<br><br>
+Lahvička izolovaných proteinů je prakticky totožná s keratinem v lidském vlasu.<br><br>
+Keratin intensive treatment® se aplikuje pro dodání hydratace a zdravého hedvábného lesku.<br><br>
+Tuto opravnou péči je ideální aplikovat také po zesvětlení vlasů, nebo před barvením na křehké, lámavé nebo příliš porézní vlasy.<br><br>
+`,
+
+prodluzovani: `
+<strong>TOUŽÍTE PO HUSTÝCH DLOUHÝCH VLASECH?</strong><br><br>
+
+Provádíme prodlužování a zhušťování vlasů metodou s keratinem. tato metoda je šetrná ke struktuře Vašich vlasů. k uchycení vlasů používáme přístroj, který vytvoří spoje rovnoměrné a nenápadné pro okolí.<br><br>
+
+<strong>JAKÉ POUŽÍVÁME VLASY</strong><br>
+Výhradně evropské, které jsou strukturou velmi podobné našim vlasům a jsou zárukou kvality a životnosti. Obvykle se vyznačují jemnou strukturou, mohou být rovné, nebo přírodně vlnité. Nabízíme přírodní i další barevné odstíny dle módních trendů v délkách 30, 50, 70 cm.<br><br>
+
+<strong>JAK VLASTNĚ VLASY PRODLOUŽÍME</strong><br>
+Metoda prodlužování a zhušťování vlasů spočívá v přidání vlasových pramínků mezi vlastní vlasy. Jedná se o pevná a dlouhodobá spojení. Vlasy jsou vzájemně propojeny keratinem a tvoří pevný mechanický spoj, při němž nedochází k poškození vlastních vlasů. Takto prodloužené vlasy odrůstají přirozeně s Vašimi. V rozmezí 2–4 měsíců je nutné spoje uvolnit a posunout zpět. Výhodou této metody je, že lze vlasové pramínky opakovaně použít. Počet aplikovaných pramenů je individuální, záleží na hustotě vlastních vlasů, požadovaném střihu, délce a kvalitě.<br><br>
+
+<strong>JAKÝM ZPŮSOBEM JE MOŽNÉ PRODLOUŽENÉ VLASY UPRAVIT</strong><br>
+Prodlužování vlasů Vás v ničem neomezuje. Vlasy je možné natáčet, fénovat, žehlit, barvit. Doporučujeme používat speciální hřeben a kartáč.
+`,
+
+manikura: `
+<strong>PEDIKÚRA A MANIKŮRA - DITA KODEŠOVÁ </strong><br><br>
+
+Zaměřuji se převážně na zdravotní a estetickou pedikúru. Většina z nás nevěnuje chodidlům velkou pozornost i přesto, že jsou každodenní chůzí velmi namáhaná.<br><br>
+
+Provádím pánskou i dámskou kombinovanou pedikúru, během které Vám pomůžu ulevit od popraskané kůže, dlouhých či zarostlých nehtů, nebo nepříjemných kuřích ok. Doporučuji také SPA pedikúru s peelingem, příjemnou masáží a hydratační péčí. Nabízím také lakování profesionálními OPI laky.<br><br>
+
+Klientům, kteří trpí nehtovou mykózou se snažím pomoci s léčbou a také doporučením efektivních lékárenských přípravků.<br><br>
+
+Provádím také manikúru, jelikož upravené nehty jsou vizitkou každé ženy. Pro ty, kteří upřednostňují přírodní úpravu nehtů, nabízím p-shine. Jedná se o kosmetickou metodu vyhlazení a vyživení nehtů pomocí včelího vosku a mateří kašičky.<br><br>
+`
+
+};
+
+
+const tabs = document.querySelectorAll(".tab-btn");
+const contents = document.querySelectorAll(".pricing-content");
+
+tabs.forEach(btn => {
+  btn.addEventListener("click", () => {
+
+    tabs.forEach(b => b.classList.remove("active"));
+    contents.forEach(c => c.classList.remove("active"));
+
+    btn.classList.add("active");
+
+    const target = document.getElementById(btn.dataset.tab);
+    target.classList.add("active");
+
+  });
+});
+</script>
+
+
+</body>
+</html>
