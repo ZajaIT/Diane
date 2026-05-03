@@ -640,6 +640,7 @@ footer{
     position:relative;
     top:0;
     align-items:center;
+    display:none;
   }
 
   .onas-images img{
@@ -649,12 +650,30 @@ footer{
 
   #onas {
 padding:60px 20px;
+background:
+url('sluzby-kadernictvi.png') center top / cover no-repeat,
+url('manikura-pedikura.png') center bottom / cover no-repeat;
+position:relative;
+filter: grayscale(20%) contrast(0.9);
 }
 
 #onas h2,
 #onas h3,
 #onas .section-sub {
 text-align:left;
+}
+
+  #onas::before {
+content:"";
+position:absolute;
+inset:0;
+background: rgba(0,0,0,0.3);
+z-index:1;
+}
+
+  .onas-wrapper {
+position:relative;
+z-index:2;
 }
 
 .onas-text {
