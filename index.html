@@ -648,27 +648,38 @@ footer{
     filter:none;
   }
 
-  #onas {
-padding:60px 20px;
-background:
-url('sluzby-kadernictvi.png') center top / cover no-repeat,
-url('manikura-pedikura.png') center bottom / cover no-repeat;
+  .onas-images.mobile-bg {
+display:flex;
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+gap:30px;
+z-index:1;
+opacity:0.2;
+pointer-events:none;
+}
+
+.onas-images.mobile-bg img {
+max-width:250px;
+width:70%;
+border-radius:50%;
+transform:none;
+}
+
+.onas-wrapper {
 position:relative;
-filter: grayscale(20%) contrast(0.9);
+z-index:2;
 }
 
 #onas h2,
 #onas h3,
 #onas .section-sub {
 text-align:left;
-}
-
-  #onas::before {
-content:"";
-position:absolute;
-inset:0;
-background: rgba(0,0,0,0.3);
-z-index:1;
 }
 
   .onas-wrapper {
@@ -856,7 +867,7 @@ background: rgba(0,0,0,0.5);
 
     </div>
 
-    <div class="onas-images">
+    <div class="onas-images mobile-bg">
       <img src="sluzby-kadernictvi.png" alt="Kadeřnické služby">
       <img src="manikura-pedikura.png" alt="Manikúra a pedikúra">
     </div>
