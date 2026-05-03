@@ -700,6 +700,12 @@ footer{
   }
 }
 
+  body.menu-open{
+  overflow:hidden;
+  height:100vh;
+  touch-action:none;
+}
+
 </style>
 </head>
 
@@ -1242,7 +1248,7 @@ hamburger.addEventListener("click", () => {
   hamburger.classList.toggle("active");
   navMenu.classList.toggle("active");
 
-  document.body.style.overflow = navMenu.classList.contains("active") ? "hidden" : "";
+  document.body.classList.toggle("menu-open");
 });
 
 /* zavření po kliknutí na link */
