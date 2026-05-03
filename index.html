@@ -1118,7 +1118,7 @@ moreLinks.forEach(link => {
     
     document.querySelector(".close").addEventListener("click", () => {
   overlay.classList.remove("active");
-  document.body.style.overflow = "";
+  document.body.classList.remove("menu-open");
   document.documentElement.style.overflow = "";
 });
 
@@ -1130,7 +1130,7 @@ const closeBtn = document.querySelector(".close");
 /* zavření křížkem */
 closeBtn.addEventListener("click", () => {
   overlay.classList.remove("active");
-  document.body.style.overflow = "";
+  document.body.classList.remove("menu-open");
   document.documentElement.style.overflow = "";
 });
 
@@ -1138,7 +1138,7 @@ closeBtn.addEventListener("click", () => {
 overlay.addEventListener("click", (e) => {
   if(e.target === overlay){
     overlay.classList.remove("active");
-    document.body.style.overflow = "";
+    document.body.classList.remove("menu-open");
     document.documentElement.style.overflow = "";
   }
 });
@@ -1147,7 +1147,7 @@ overlay.addEventListener("click", (e) => {
 document.addEventListener("keydown", (e) => {
   if(e.key === "Escape"){
     overlay.classList.remove("active");
-    document.body.style.overflow = "";
+    document.body.classList.remove("menu-open");
     document.documentElement.style.overflow = "";
   }
 });
@@ -1256,7 +1256,7 @@ document.querySelectorAll("nav ul a").forEach(link => {
   link.addEventListener("click", () => {
     hamburger.classList.remove("active");
     navMenu.classList.remove("active");
-    document.body.style.overflow = "";
+    document.body.classList.remove("menu-open");
   });
 });
 
@@ -1265,7 +1265,7 @@ document.addEventListener("click", (e) => {
   if(!navMenu.contains(e.target) && !hamburger.contains(e.target)){
     hamburger.classList.remove("active");
     navMenu.classList.remove("active");
-    document.body.style.overflow = "";
+    document.body.classList.remove("menu-open");
   }
 });
 
@@ -1274,7 +1274,7 @@ document.addEventListener("keydown", (e) => {
   if(e.key === "Escape"){
     hamburger.classList.remove("active");
     navMenu.classList.remove("active");
-    document.body.style.overflow = "";
+    document.body.classList.remove("menu-open");
   }
 });
 </script>
