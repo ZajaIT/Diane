@@ -1182,6 +1182,14 @@ background: rgba(0,0,0,0.5);
 </div>
 
 <script>
+if ("scrollRestoration" in history) {
+history.scrollRestoration = "manual";
+}
+
+window.addEventListener("load", () => {
+window.scrollTo(0, 0);
+});
+  
 window.addEventListener("scroll", function(){
   const nav = document.querySelector("nav");
 
