@@ -296,6 +296,20 @@ h2{
   gap:25px;
 }
 
+  .gallery-grid {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 25px;
+}
+
+.gallery-grid img {
+width: 100%;
+height: 420px;
+object-fit: cover;
+border-radius: 20px;
+display: block;
+}
+
 .card{
   background:#F1EEE8;
   padding:40px;
@@ -795,6 +809,14 @@ margin-top:12px;
   .hero::after {
 background: rgba(0,0,0,0.5);
 }
+
+  .gallery-grid {
+grid-template-columns: 1fr;
+}
+
+.gallery-grid img {
+height: 260px;
+}
 }
 
   body.menu-open{
@@ -1093,6 +1115,13 @@ background: rgba(0,0,0,0.5);
     Kompletní ceník Vám rádi představíme přímo u nás v kadeřnictví. Cena u chemických úkonů se může lišit v návaznosti na skutečnou spotřebu materiálu.
   </p>
 
+</section>
+
+  <section> <h2>Jak to u nás vypadá</h2> 
+    <div class="gallery-grid"> 
+    <img src="interier-kadernictvi-praha7.jpg" alt="Interiér kadeřnictví"> 
+    <img src="interier-kresla-salon.jpg" alt="Kadeřnická křesla"> 
+  </div> 
 </section>
 
 <!-- KONTAKT -->
