@@ -325,6 +325,28 @@ transition: transform 0.5s ease;
 transform: scale(1.08);
 }
 
+  .hair-gallery {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 20px;
+}
+
+.hair-gallery .img-box {
+overflow: hidden;
+border-radius: 20px;
+}
+
+.hair-gallery img {
+width: 100%;
+height: auto;
+display: block;
+transition: transform 0.5s ease;
+}
+
+.hair-gallery .img-box:hover img {
+transform: scale(1.08);
+}
+
 .card{
   background:#F1EEE8;
   padding:40px;
@@ -828,6 +850,10 @@ background: rgba(0,0,0,0.5);
   .gallery-grid {
 grid-template-columns: 1fr;
 }
+
+  .hair-gallery {
+grid-template-columns: 1fr;
+}
 }
 
   body.menu-open{
@@ -958,6 +984,16 @@ grid-template-columns: 1fr;
 <span class="more-link" data-service="manikura">Zjistit více</span>
 </div>
   </div>
+</section>
+
+  <section> 
+    <h2>Ukázky naší práce</h2> 
+    <div class="hair-gallery"> 
+    <div class="img-box"> <img src="vlasy1.jpeg" alt="Dámský účes"> </div> 
+    <div class="img-box"> <img src="vlasy2.jpg" alt="Dámský účes"> </div> 
+    <div class="img-box"> <img src="vlasy4.jpg" alt="Dámský účes"> </div> 
+    <div class="img-box"> <img src="vlasy5.jpg" alt="Dámský účes"> </div> 
+  </div> 
 </section>
 
 <!-- CENÍK -->
