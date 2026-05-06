@@ -307,11 +307,22 @@ width: 100%;
 height: auto;
 border-radius: 20px;
 display: block;
-transition: transform 0.4s ease;
 }
 
-  .gallery-grid img:hover {
-transform: scale(1.05);
+  .img-box {
+overflow: hidden;
+border-radius: 20px;
+}
+
+.img-box img {
+width: 100%;
+height: auto;
+display: block;
+transition: transform 0.5s ease;
+}
+
+.img-box:hover img {
+transform: scale(1.08);
 }
 
 .card{
@@ -1119,8 +1130,8 @@ grid-template-columns: 1fr;
 
   <section> <h2>Jak to u nás vypadá</h2> 
     <div class="gallery-grid"> 
-    <img src="interier-kadernictvi-praha7.jpg" alt="Interiér kadeřnictví"> 
-    <img src="interier-kresla-salon.jpg" alt="Kadeřnická křesla"> 
+    <div class="img-box"> <img src="interier-kadernictvi-praha7.jpg" alt="Interiér kadeřnictví"> </div>
+    <div class="img-box"> <img src="interier-kresla-salon.jpg" alt="Kadeřnická křesla"> </div>
   </div> 
 </section>
 
