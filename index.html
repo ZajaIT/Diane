@@ -1312,15 +1312,15 @@ height: 100%;
     <div class="contact-form">
     <h3>Napište nám</h3>
 
-  <form>
+  <form action="https://formspree.io/f/xqenwbop" method="POST">
 
-    <input type="text" placeholder="Jméno" required>
+    <input type="text" name="jmeno" placeholder="Jméno" required>
 
-    <input type="tel" placeholder="Telefon" required>
+    <input type="tel" name="telefon" placeholder="Telefon" required>
 
-    <input type="email" placeholder="E-mail">
+    <input type="email" name="email" placeholder="E-mail">
 
-    <textarea placeholder="Vaše zpráva" rows="6"></textarea>
+    <textarea name="zprava" placeholder="Vaše zpráva" rows="6"></textarea>
 
     <button type="submit" class="btn">
       Odeslat zprávu
