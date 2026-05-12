@@ -587,6 +587,28 @@ transform: scale(1.08);
   margin-bottom:4px;
   display:block;
 }
+  .booking-note{
+  position:relative;
+  padding-left:18px;
+  font-size:14px;
+  line-height:1.5;
+  color:#666;
+  margin-top:-8px;
+  margin-bottom:10px;
+}
+
+.booking-note::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:7px;
+
+  width:6px;
+  height:6px;
+  border-radius:2px;
+
+  background:#F28C82;
+}
 
 .contact-form input:focus,
 .contact-form textarea:focus{
@@ -1361,6 +1383,10 @@ height: 100%;
 
     <div class="contact-form">
     <h3>Objednejte se</h3>
+
+      <div class="booking-note">
+  Objednávka je platná po potvrzení na uvedeném telefonu.
+</div>
 
   <form id="contact-form" action="https://formspree.io/f/xqenwbop" method="POST">
 
