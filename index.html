@@ -561,8 +561,8 @@ transform: scale(1.08);
 
   .service-options{
   display:flex;
-  flex-direction:column;
-  gap:12px;
+  gap:20px;
+  flex-wrap:wrap;
   margin-top:-4px;
 }
 
@@ -1001,6 +1001,10 @@ height: 100%;
     grid-template-columns:1fr;
     gap:16px;
   }
+  .service-options{
+  flex-direction:column;
+  gap:12px;
+}
 }
   .date-time-row{
   display:grid;
