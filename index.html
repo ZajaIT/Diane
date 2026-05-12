@@ -975,6 +975,21 @@ height: 420px;
 .hair-gallery img {
 height: 100%;
 }
+  .date-time-row{
+    grid-template-columns:1fr;
+    gap:16px;
+  }
+}
+  .date-time-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:16px;
+}
+
+.date-time-field{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
 }
 
   body.menu-open{
@@ -1353,8 +1368,6 @@ height: 100%;
 
     <input type="tel" name="telefon" placeholder="Telefon" required>
 
-    <input type="email" name="email" placeholder="E-mail">
-
     <input type="hidden" name="_subject" value="Nová zpráva z webu Diane">
 
     <input type="hidden" name="_cc" value="janatoma@icloud.com">
@@ -1380,11 +1393,19 @@ height: 100%;
 
 </div>
 
-<label class="form-label">Požadovaný den</label>
-<input type="date" name="den" required>
+<div class="date-time-row">
 
-<label class="form-label">Požadovaný čas</label>
-<input type="time" name="cas">
+  <div class="date-time-field">
+    <label class="form-label">Který den</label>
+    <input type="date" name="den" required>
+  </div>
+
+  <div class="date-time-field">
+    <label class="form-label">V kolik hodin</label>
+    <input type="time" name="cas">
+  </div>
+
+</div>
 
 <textarea name="zprava" placeholder="Vaše zpráva" rows="6"></textarea>
 
