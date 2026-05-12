@@ -547,7 +547,8 @@ transform: scale(1.08);
 }
 
 .contact-form input,
-.contact-form textarea{
+.contact-form textarea,
+.contact-form select{
   width:100%;
   padding:16px;
   border:1px solid #ddd;
@@ -556,6 +557,35 @@ transform: scale(1.08);
   font-size:15px;
   background:#fff;
   transition:0.3s ease;
+}
+
+  .service-options{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  margin-top:-4px;
+}
+
+.service-options label{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-size:15px;
+  cursor:pointer;
+}
+
+.service-options input[type="checkbox"]{
+  width:18px;
+  height:18px;
+  accent-color:var(--green);
+}
+
+.form-label{
+  font-size:15px;
+  font-weight:600;
+  color:#2b2b2b;
+  margin-bottom:4px;
+  display:block;
 }
 
 .contact-form input:focus,
@@ -1329,7 +1359,34 @@ height: 100%;
 
     <input type="hidden" name="_cc" value="janatoma@icloud.com">
 
-    <textarea name="zprava" placeholder="Vaše zpráva" rows="6"></textarea>
+    <label class="form-label">Vyberte službu</label>
+
+<div class="service-options">
+
+  <label>
+    <input type="checkbox" name="sluzba[]" value="Kadeřnictví">
+    <span>Kadeřnictví</span>
+  </label>
+
+  <label>
+    <input type="checkbox" name="sluzba[]" value="Kosmetika">
+    <span>Kosmetika</span>
+  </label>
+
+  <label>
+    <input type="checkbox" name="sluzba[]" value="Pedikúra">
+    <span>Pedikúra</span>
+  </label>
+
+</div>
+
+<label class="form-label">Požadovaný den</label>
+<input type="date" name="den" required>
+
+<label class="form-label">Požadovaný čas</label>
+<input type="time" name="cas">
+
+<textarea name="zprava" placeholder="Vaše zpráva" rows="6"></textarea>
 
     <button type="submit" class="btn">
       Odeslat zprávu
