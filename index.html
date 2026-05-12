@@ -587,6 +587,8 @@ transform: scale(1.08);
   margin-bottom:4px;
   display:block;
 }
+
+  
   .booking-note{
   position:relative;
   padding-left:18px;
@@ -608,6 +610,23 @@ transform: scale(1.08);
   border-radius:2px;
 
   background:#F28C82;
+}
+  .gdpr-note{
+  font-size:13px;
+  line-height:1.5;
+  color:#777;
+  text-align:center;
+  margin-top:-4px;
+}
+
+.gdpr-note a{
+  color:var(--green);
+  text-decoration:none;
+  font-weight:600;
+}
+
+.gdpr-note a:hover{
+  opacity:0.7;
 }
 
 .contact-form input:focus,
@@ -1442,6 +1461,13 @@ height: 100%;
     <button type="submit" class="btn">
       Odeslat zprávu
     </button>
+
+    <p class="gdpr-note">
+  Odesláním formuláře souhlasíte se
+  <a href="gdpr.html" target="_blank">
+    zpracováním osobních údajů
+  </a>.
+</p>
 
     <p id="form-message"></p>
 
