@@ -485,8 +485,10 @@ transform: scale(1.08);
 .price-row{
   display:flex;
   justify-content:space-between;
+  align-items:center;
   gap:20px;
   padding:16px 0;
+  min-height:78px;
   border-bottom:1px solid #eee;
 }
 
@@ -1061,6 +1063,10 @@ height: 100%;
   overflow:hidden;
   height:100vh;
   touch-action:none;
+}
+
+  .price-row{
+  min-height:0;
 }
 
 </style>
