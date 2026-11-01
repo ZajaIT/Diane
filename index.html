@@ -633,6 +633,35 @@ transform: scale(1.08);
 
   background:#F28C82;
 }
+
+  
+/* INFORMACE K OBJEDNÁVCE KADEŘNICTVÍ – PC */
+.hair-booking-note{
+  display:none;
+  position:relative;
+  padding-left:18px;
+  font-size:14px;
+  line-height:1.5;
+  color:#666;
+  margin-top:-4px;
+  margin-bottom:4px;
+}
+
+.hair-booking-note.visible{
+  display:block;
+}
+
+.hair-booking-note::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:7px;
+  width:6px;
+  height:6px;
+  border-radius:2px;
+  background:#F28C82;
+}
+
   .gdpr-note{
   font-size:13px;
   line-height:1.5;
@@ -1494,9 +1523,15 @@ height: 100%;
     <span>Pedikúra</span>
   </label>
 
+
 </div>
 
+<p class="hair-booking-note" id="hair-booking-note">
+  Při objednávce do kadeřnictví prosíme, uveďte do zprávy požadovanou službu (střih, barvení, melír apod.) a délku vlasů (např. krátké, dlouhé, pod ramena).
+</p>
+
 <div class="date-time-row">
+
 
   <div class="date-time-field">
     <label class="form-label">Který den</label>
@@ -1801,6 +1836,31 @@ form.addEventListener("submit", async function(e) {
   }
 
 });
+
+  
+/* ZOBRAZENÍ INFORMACE PŘI VÝBĚRU KADEŘNICTVÍ */
+const hairCheckbox = document.querySelector(
+  'input[name="sluzba[]"][value="Kadeřnictví"]'
+);
+
+const hairBookingNote = document.getElementById("hair-booking-note");
+
+function updateHairBookingNote(){
+  hairBookingNote.classList.toggle(
+    "visible",
+    hairCheckbox.checked
+  );
+}
+
+hairCheckbox.addEventListener("change", updateHairBookingNote);
+
+/* Skrytí informace po úspěšném odeslání formuláře */
+form.addEventListener("reset", () => {
+  hairBookingNote.classList.remove("visible");
+});
+
+updateHairBookingNote();
+
 </script>
 
 
